@@ -23,7 +23,7 @@ public class JobData {
 
         ArrayList<Job> results = new ArrayList<>();
 
-        if (value.toLowerCase().equals("all")){
+        if (value.equalsIgnoreCase("all")){
             return (ArrayList<Job>) allJobs;
         }
 
@@ -48,9 +48,9 @@ public class JobData {
         if (fieldName.equals("name")){
             theValue = job.getName();
         } else if (fieldName.equals("employer")){
-            theValue = job.getEmployer().toString();
+            theValue = job.getEmployer();
         } else {
-            theValue = job.getSkills().toString();
+            theValue = job.getSkills();
         }
 
         return theValue;
@@ -72,9 +72,9 @@ public class JobData {
 
             if (job.getName().toLowerCase().contains(lower_val)) {
                 results.add(job);
-            } else if (job.getEmployer().toString().toLowerCase().contains(lower_val)) {
+            } else if (job.getEmployer().toLowerCase().contains(lower_val)) {
                 results.add(job);
-            } else if (job.getSkills().toString().toLowerCase().contains(lower_val)) {
+            } else if (job.getSkills().toLowerCase().contains(lower_val)) {
                 results.add(job);
             } else if (job.toString().toLowerCase().contains(lower_val)) {
                 results.add(job);

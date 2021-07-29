@@ -1,11 +1,19 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
+@MappedSuperclass
 public abstract class AbstractEntity {
 
+    @GeneratedValue
     private int id;
 
+    @NotBlank
+    @Size(max = 100)
     private String name;
 
     public int getId() {
@@ -21,8 +29,7 @@ public abstract class AbstractEntity {
     }
 
     @Override
-    public String toString() {
-        return name;
+    public String toString() { return name;
     }
 
     @Override
