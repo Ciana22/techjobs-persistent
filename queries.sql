@@ -1,4 +1,5 @@
 ## Part 1: Test it with SQL
+    SELECT * FROM tech_jobs.job;
 
 ## Part 2: Test it with SQL
 
