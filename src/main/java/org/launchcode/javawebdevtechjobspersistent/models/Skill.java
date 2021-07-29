@@ -1,6 +1,6 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
-import org.dom4j.tree.AbstractEntity;
+
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
@@ -9,13 +9,14 @@ import javax.validation.constraints.Size;
 @Entity
 public class Skill extends AbstractEntity {
 
+
     @NotBlank(message = "Enter a description.")
-    @Size(max = 300)
+    @Size(max = 255, message = "Description has a max of 255 characters.")
     private String description;
 
-    public Skill(String description) {
-    this.description = description;
-    }
+    //public Skill(String description) {
+    //this.description = description;
+    //}
     public Skill () {
     }
 
@@ -29,5 +30,4 @@ public class Skill extends AbstractEntity {
 
 
 }
-
 

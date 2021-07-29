@@ -4,11 +4,12 @@ import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+
 @Entity
 public class Employer extends AbstractEntity {
 
     @NotBlank(message = "Enter a location.")
-    @Size(max = 400)
+    @Size(max = 400, message = "Location must be 400 characters or less.")
     private String location;
 
     public Employer(String location) {
