@@ -14,8 +14,8 @@ public abstract class AbstractEntity {
     @GeneratedValue
     private int id;
 
-    @NotBlank
-    @Size(min = 1, max = 255)
+    @NotBlank(message = "Name required.")
+    @Size(max = 100)
     private String name;
 
     public int getId() {
@@ -31,8 +31,7 @@ public abstract class AbstractEntity {
     }
 
     @Override
-    public String toString() {
-        return name;
+    public String toString() { return name;
     }
 
     @Override
@@ -48,4 +47,7 @@ public abstract class AbstractEntity {
         return Objects.hash(id);
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 }
